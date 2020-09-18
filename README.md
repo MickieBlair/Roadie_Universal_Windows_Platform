@@ -21,7 +21,6 @@
 ![Welcome](images/3.jpg)
 ![Menu](images/menu.jpg)
 ![User Profile 1](images/4.jpg)
-![User Profile 2](images/5.jpg)
 ![Add Edit Vehicle and Insurance](images/6.jpg)
 ![Browse Carpools](images/8.jpg)
 ![Create Carpool](images/7.jpg)
