@@ -1,0 +1,449 @@
+﻿<Page
+    x:Class="Roadie_UWP_MLB.Views.Add_Edit_Vehicles"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Roadie_UWP_MLB.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="#C1CAD6"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel
+                MinHeight="600"
+                Margin="0,35,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Orientation="Vertical">
+
+                <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                    <Button x:Name="Menu" Background="#FF2A295B">
+                        <Image
+                            Width="45"
+                            Height="50"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Stretch"
+                            Source="../Assets/menu.png" />
+                        <Button.Flyout>
+                            <Flyout Placement="BottomEdgeAlignedLeft">
+                                <StackPanel x:Name="Expanded" Orientation="Vertical">
+                                    <Button
+                                        x:Name="Home_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="Home_Btn_Click"
+                                        Content="Home"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontFamily="Arial Black"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="UpdateProfile_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="UpdateProfile_Btn_Click"
+                                        Content="Update Profile"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontFamily="Arial Black"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="Vehicles_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF699CC7"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Content="Vehicles/Insurance"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="SearchForCarpool_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="SearchForCarpool_Btn_Click"
+                                        Content="Browse Carpools"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="CreateCarpool_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="CreateCarpool_Btn_Click"
+                                        Content="Create Carpool"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+
+                                    <Button
+                                        x:Name="Logout_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="Logout_Btn_Click"
+                                        Content="Logout"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                </StackPanel>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
+
+                    <Image
+                        Width="325"
+                        Height="60"
+                        Source="../Assets/Roadie_Blue.png" />
+                </StackPanel>
+
+
+                <StackPanel x:Name="PageContent" Visibility="Visible">
+                    <TextBlock
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="26"
+                        FontWeight="Bold"
+                        Foreground="#FF2A295C"
+                        Text="Vehicles" />
+                    <TextBlock
+                        x:Name="VehicleCount"
+                        Margin="0,0,0,5"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Foreground="#FF2A295C"
+                        Text="" />
+                    <ListBox
+                        x:Name="vehicle_list"
+                        Width="320"
+                        Height="100"
+                        Margin="0"
+                        HorizontalAlignment="Center"
+                        ScrollViewer.VerticalScrollBarVisibility="Visible"
+                        SelectionChanged="vehicle_list_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Height="30" Orientation="Horizontal">
+
+                                    <TextBlock
+                                        Height="30"
+                                        HorizontalAlignment="Left"
+                                        FontSize="20"
+                                        FontStyle="Italic"
+                                        Text="{Binding vehicleDiscription}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <StackPanel
+                        x:Name="Button_Panel"
+                        Margin="0,15,0,15"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal"
+                        Visibility="Visible">
+                        <Button
+                            x:Name="Add_Btn"
+                            Width="100"
+                            Height="40"
+                            Margin="0,0,10,0"
+                            Background="#FF206EB0"
+                            BorderBrush="#2a295c"
+                            BorderThickness="1"
+                            Click="Add_Btn_Click"
+                            Content="Add"
+                            FocusVisualPrimaryBrush="#FF2A295C"
+                            FontSize="22"
+                            Foreground="White" />
+
+                        <Button
+                            x:Name="Edit_Btn"
+                            Width="100"
+                            Height="40"
+                            Margin="0,0,10,0"
+                            Background="#FF206EB0"
+                            BorderBrush="#2a295c"
+                            BorderThickness="1"
+                            Click="Edit_Btn_Click"
+                            Content="Edit"
+                            FocusVisualPrimaryBrush="#FF2A295C"
+                            FontSize="22"
+                            Foreground="White" />
+
+                        <Button
+                            x:Name="Delete_Btn"
+                            Width="100"
+                            Height="40"
+                            Background="#FF206EB0"
+                            BorderBrush="#2a295c"
+                            BorderThickness="1"
+                            Click="Delete_Btn_Click"
+                            Content="Delete"
+                            FocusVisualPrimaryBrush="#FF2A295C"
+                            FontSize="22"
+                            Foreground="White" />
+                    </StackPanel>
+                    <TextBlock
+                        x:Name="Status"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Center"
+                        FontFamily="Arial Rounded MT Bold"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Foreground="#FFD90120"
+                        Text="Status"
+                        Visibility="Collapsed" />
+
+                    <StackPanel
+                        x:Name="grpArea"
+                        HorizontalAlignment="Center"
+                        Visibility="Collapsed">
+                        <TextBlock
+                            x:Name="Title"
+                            Margin="0,30,0,5"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="22"
+                            FontWeight="Bold"
+                            Foreground="#FF2A295C"
+                            Text="" />
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock
+                                Margin="25,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="20"
+                                FontWeight="Bold"
+                                Foreground="#FF2A295C"
+                                Text="Vehicle Description:" />
+                            <TextBox
+                                x:Name="Description"
+                                Width="320"
+                                Height="100"
+                                Margin="25,0,25,10"
+                                HorizontalAlignment="Left"
+                                FontSize="22"
+                                InputScope="Default"
+                                PlaceholderForeground="#FF515050"
+                                PlaceholderText="Vehicle Description -  Year, Make, Model, Color (100 character max)"
+                                Text="{Binding Path=vehicle.vehicleDiscription, Mode=TwoWay}"
+                                TextWrapping="Wrap" />
+                            <TextBlock
+                                Margin="25,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="20"
+                                FontWeight="Bold"
+                                Foreground="#FF2A295C"
+                                Text="License Plate:" />
+                            <TextBox
+                                x:Name="TagNumber"
+                                Width="320"
+                                Margin="25,0,25,10"
+                                HorizontalAlignment="Left"
+                                FontSize="22"
+                                InputScope="Default"
+                                PlaceholderForeground="#FF515050"
+                                PlaceholderText="License Plate"
+                                Text="{Binding Path=vehicle.vehicleRegistrationNumber, Mode=TwoWay}" />
+
+                            <TextBlock
+                                Margin="25,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="20"
+                                FontWeight="Bold"
+                                Foreground="#FF2A295C"
+                                Text="Number Of Seats:" />
+                            <TextBox
+                                x:Name="NumberOfSeats"
+                                Width="320"
+                                Margin="25,0,25,10"
+                                HorizontalAlignment="Left"
+                                FontSize="22"
+                                InputScope="Default"
+                                PlaceholderForeground="#FF515050"
+                                PlaceholderText="Number Of Seats"
+                                Text="{Binding Path=vehicle.numberOfSeats, Mode=TwoWay}" />
+
+                            <StackPanel
+                                Height="65"
+                                Margin="0,0,0,0"
+                                HorizontalAlignment="Center"
+                                Orientation="Horizontal">
+                                <Button
+                                    x:Name="AddSave_Btn"
+                                    Width="175"
+                                    Margin="0,0,0,0"
+                                    Background="#FF206EB0"
+                                    BorderBrush="#2a295c"
+                                    BorderThickness="1"
+                                    Click="Save_Click"
+                                    Content="Save New"
+                                    FocusVisualPrimaryBrush="#FF2A295C"
+                                    FontSize="22"
+                                    Foreground="White"
+                                    Visibility="Collapsed" />
+                                <Button
+                                    x:Name="SaveEdit_Btn"
+                                    Width="175"
+                                    Margin="0,0,0,0"
+                                    Background="#FF206EB0"
+                                    BorderBrush="#2a295c"
+                                    BorderThickness="1"
+                                    Click="SaveEdit_Btn_Click"
+                                    Content="Save Edit"
+                                    FocusVisualPrimaryBrush="#FF2A295C"
+                                    FontSize="22"
+                                    Foreground="White"
+                                    Visibility="Collapsed" />
+                                <Button
+                                    x:Name="Remove_Btn"
+                                    Width="175"
+                                    Margin="0,0,0,0"
+                                    Background="#FF206EB0"
+                                    BorderBrush="#2a295c"
+                                    BorderThickness="1"
+                                    Click="Remove_Btn_Click"
+                                    Content="Confirm Delete"
+                                    FocusVisualPrimaryBrush="#FF2A295C"
+                                    FontSize="22"
+                                    Foreground="White"
+                                    Visibility="Collapsed" />
+                                <Button
+                                    Width="125"
+                                    Margin="15,0,0,0"
+                                    Background="#FF206EB0"
+                                    BorderBrush="#2a295c"
+                                    BorderThickness="1"
+                                    Click="Cancel_Click"
+                                    Content="Cancel"
+                                    FocusVisualPrimaryBrush="#FF2A295C"
+                                    FontSize="22"
+                                    Foreground="White" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" Visibility="Visible" />
+                <TextBlock
+                    Margin="0,10,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="26"
+                    FontWeight="Bold"
+                    Foreground="#FF2A295C"
+                    Text="Insurance" />
+                <TextBlock
+                    x:Name="InsuranceCount"
+                    Margin="0,0,0,10"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Foreground="#FF2A295C"
+                    Text="No insurance associated with account." />
+                <StackPanel Orientation="Vertical">
+
+                    <TextBox
+                        x:Name="InsuranceCompany"
+                        Width="320"
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        FontSize="22"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="Insurance Company" />
+                    <TextBox
+                        x:Name="PolicyNumber"
+                        Width="320"
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Center"
+                        FontSize="22"
+                        InputScope="Default"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="Policy Number" />
+
+                    <TextBlock
+                        Padding="35,5,0,00"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FocusVisualPrimaryBrush="#FF2A295C"
+                        FontFamily="Arial"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Foreground="#FF2A295C"
+                        Text="Policy Expiration Date:" />
+                    <DatePicker
+                        x:Name="ExpInsDatePicker"
+                        Width="320"
+                        HorizontalAlignment="Center"
+                        FontSize="20" />
+                    <TextBlock
+                        x:Name="Ins_Status"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Center"
+                        FontFamily="Arial Rounded MT Bold"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="#FFD90120"
+                        Text="" />
+
+                    <StackPanel
+                        x:Name="Ins_Button_Panel"
+                        Margin="0,5,0,15"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal"
+                        Visibility="Visible">
+                        <Button
+                            x:Name="UpdateIns_Btn"
+                            Width="155"
+                            Height="40"
+                            Margin="0,0,10,0"
+                            Background="#FF206EB0"
+                            BorderBrush="#2a295c"
+                            BorderThickness="1"
+                            Click="UpdateIns_Btn_Click"
+                            Content="Update"
+                            FocusVisualPrimaryBrush="#FF2A295C"
+                            FontSize="22"
+                            Foreground="White" />
+
+                        <Button
+                            x:Name="Ins_Delete_Btn"
+                            Width="155"
+                            Height="40"
+                            Background="#FF206EB0"
+                            BorderBrush="#2a295c"
+                            BorderThickness="1"
+                            Click="Ins_Delete_Btn_Click"
+                            Content="Delete"
+                            FocusVisualPrimaryBrush="#FF2A295C"
+                            FontSize="22"
+                            Foreground="White" />
+                    </StackPanel>
+                </StackPanel>
+
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

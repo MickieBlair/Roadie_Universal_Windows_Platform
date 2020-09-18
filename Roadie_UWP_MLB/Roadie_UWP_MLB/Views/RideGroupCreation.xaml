@@ -1,0 +1,523 @@
+﻿<Page
+    x:Class="Roadie_UWP_MLB.RideGroupCreation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Roadie_UWP_MLB"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="#C1CAD6"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel
+                MinHeight="600"
+                Margin="0,35,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Orientation="Vertical">
+                <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                    <Button x:Name="Menu" Background="#FF2A295B">
+                        <Image
+                            Width="45"
+                            Height="50"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Stretch"
+                            Source="../Assets/menu.png" />
+                        <Button.Flyout>
+                            <Flyout Placement="BottomEdgeAlignedLeft">
+                                <StackPanel x:Name="Expanded" Orientation="Vertical">
+                                    <Button
+                                        x:Name="Home_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="Home_Btn_Click"
+                                        Content="Home"
+                                        FontFamily="Arial Black"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="UpdateProfile_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="UpdateProfile_Btn_Click"
+                                        Content="Update Profile"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontFamily="Arial Black"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="Vehicles_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="Vehicles_Btn_Click"
+                                        Content="Vehicles/Insurance"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="SearchForCarpool_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="SearchForCarpool_Btn_Click"
+                                        Content="Browse Carpools"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="CreateCarpool_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF699CC7"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="CreateCarpool_Btn_Click"
+                                        Content="Create Carpool"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+
+                                    <Button
+                                        x:Name="Logout_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="Logout_Btn_Click"
+                                        Content="Logout"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                </StackPanel>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
+                    <Image
+                        Width="325"
+                        Height="60"
+                        Source="../Assets/Roadie_Blue.png" />
+                </StackPanel>
+
+                <TextBlock
+                    x:Name="Title"
+                    Margin="0,5,0,5"
+                    HorizontalAlignment="Center"
+                    FontSize="24"
+                    FontWeight="Bold"
+                    Foreground="#FF2A295C"
+                    Text="Create A Carpool!" />
+
+                <StackPanel x:Name="PageContentAddresses" HorizontalAlignment="Center">
+                    <TextBlock
+                        Margin="25,5,0,0"
+                        HorizontalAlignment="Left"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Foreground="#FF2A295C"
+                        Text="Starting Location:" />
+                    <ComboBox
+                        x:Name="StartLocation"
+                        Width="310"
+                        Margin="25,0,25,0"
+                        HorizontalAlignment="Left"
+                        FontSize="18"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="Select Starting Location:"
+                        SelectionChanged="StartLocation_SelectionChanged">
+                        <x:String>New Location</x:String>
+                        <x:String>Home</x:String>
+                    </ComboBox>
+
+                    <StackPanel x:Name="StartAddressAll" Visibility="Collapsed">
+                        <TextBox
+                            x:Name="StartAddress1"
+                            Width="310"
+                            Margin="0,5,0,5"
+                            HorizontalAlignment="Center"
+                            FontSize="18"
+                            InputScope="Default"
+                            PlaceholderForeground="#FF515050"
+                            PlaceholderText="Street Address 1*"
+                            SelectionChanging="StartAddress1_SelectionChanging" />
+
+                        <TextBox
+                            x:Name="StartAddress2"
+                            Width="310"
+                            Margin="0,0,0,5"
+                            HorizontalAlignment="Center"
+                            FontSize="18"
+                            InputScope="Default"
+                            PlaceholderForeground="#FF515050"
+                            PlaceholderText="Street Address 2"
+                            SelectionChanging="StartAddress2_SelectionChanging" />
+
+                        <TextBox
+                            x:Name="StartCity"
+                            Width="310"
+                            Margin="0,0,0,5"
+                            HorizontalAlignment="Center"
+                            FontSize="18"
+                            InputScope="Default"
+                            PlaceholderForeground="#FF515050"
+                            PlaceholderText="City*"
+                            SelectionChanging="StartCity_SelectionChanging" />
+
+
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <ComboBox
+                                x:Name="StartState"
+                                Width="105"
+                                Margin="25,0,0,0"
+                                HorizontalAlignment="Left"
+                                FontSize="18"
+                                PlaceholderForeground="#FF515050"
+                                PlaceholderText="State*"
+                                SelectionChanged="StartState_SelectionChanged">
+                                <x:String>AL</x:String>
+                                <x:String>AK</x:String>
+                                <x:String>AZ</x:String>
+                                <x:String>AR</x:String>
+                                <x:String>CA</x:String>
+                                <x:String>CO</x:String>
+                                <x:String>CT</x:String>
+                                <x:String>DE</x:String>
+                                <x:String>FL</x:String>
+                                <x:String>GA</x:String>
+                                <x:String>HI</x:String>
+                                <x:String>ID</x:String>
+                                <x:String>IL</x:String>
+                                <x:String>IN</x:String>
+                                <x:String>IA</x:String>
+                                <x:String>KS</x:String>
+                                <x:String>KY</x:String>
+                                <x:String>LA</x:String>
+                                <x:String>ME</x:String>
+                                <x:String>MD</x:String>
+                                <x:String>MA</x:String>
+                                <x:String>MI</x:String>
+                                <x:String>MN</x:String>
+                                <x:String>MS</x:String>
+                                <x:String>MO</x:String>
+                                <x:String>MT</x:String>
+                                <x:String>NE</x:String>
+                                <x:String>NV</x:String>
+                                <x:String>NH</x:String>
+                                <x:String>NJ</x:String>
+                                <x:String>NM</x:String>
+                                <x:String>NY</x:String>
+                                <x:String>NC</x:String>
+                                <x:String>ND</x:String>
+                                <x:String>OH</x:String>
+                                <x:String>OK</x:String>
+                                <x:String>OR</x:String>
+                                <x:String>PA</x:String>
+                                <x:String>RI</x:String>
+                                <x:String>SC</x:String>
+                                <x:String>SD</x:String>
+                                <x:String>TN</x:String>
+                                <x:String>TX</x:String>
+                                <x:String>UT</x:String>
+                                <x:String>VT</x:String>
+                                <x:String>VA</x:String>
+                                <x:String>WA</x:String>
+                                <x:String>WV</x:String>
+                                <x:String>WI</x:String>
+                                <x:String>WY</x:String>
+                            </ComboBox>
+
+                            <TextBox
+                                x:Name="StartZip"
+                                Width="195"
+                                Margin="10,0,25,0"
+                                HorizontalAlignment="Left"
+                                FontSize="18"
+                                InputScope="Default"
+                                PlaceholderForeground="#FF515050"
+                                PlaceholderText="Zip Code *"
+                                SelectionChanging="StartZip_SelectionChanging" />
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock
+                            x:Name="Start_Status_Green"
+                            Margin="0,5,0,5"
+                            HorizontalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Foreground="#FF219A09"
+                            Text="Address Status"
+                            TextWrapping="Wrap"
+                            Visibility="Collapsed" />
+                        <TextBlock
+                            x:Name="Start_Status_Red"
+                            Margin="0,5,0,5"
+                            HorizontalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Foreground="#FFD90120"
+                            Text="Address Status"
+                            TextWrapping="Wrap"
+                            Visibility="Collapsed" />
+
+                    </StackPanel>
+
+
+
+                    <StackPanel x:Name="EndingLocation">
+                        <TextBlock
+                            Margin="25,5,0,5"
+                            HorizontalAlignment="Left"
+                            FontSize="18"
+                            FontWeight="Bold"
+                            Foreground="#FF2A295C"
+                            Text="Ending Location:" />
+                        <ComboBox
+                            x:Name="EndLocation"
+                            Width="310"
+                            Margin="25,0,25,5"
+                            HorizontalAlignment="Left"
+                            FontSize="18"
+                            PlaceholderForeground="#FF515050"
+                            PlaceholderText="Select Ending Location:"
+                            SelectionChanged="EndLocation_SelectionChanged">
+                            <x:String>New Location</x:String>
+                            <x:String>Home</x:String>
+                        </ComboBox>
+                        <StackPanel x:Name="EndAddressAll" Visibility="Collapsed">
+
+                            <TextBox
+                                x:Name="EndStreetAddress1"
+                                Width="310"
+                                Margin="0,0,0,5"
+                                HorizontalAlignment="Center"
+                                FontSize="18"
+                                InputScope="Default"
+                                PlaceholderForeground="#FF515050"
+                                PlaceholderText="Street Address 1*"
+                                SelectionChanging="EndStreetAddress1_SelectionChanging" />
+
+                            <TextBox
+                                x:Name="EndStreetAddress2"
+                                Width="310"
+                                Margin="0,0,0,5"
+                                HorizontalAlignment="Center"
+                                FontSize="18"
+                                InputScope="Default"
+                                PlaceholderForeground="#FF515050"
+                                PlaceholderText="Street Address 2"
+                                SelectionChanging="EndStreetAddress2_SelectionChanging" />
+
+                            <TextBox
+                                x:Name="EndCity"
+                                Width="310"
+                                Margin="0,0,0,5"
+                                HorizontalAlignment="Center"
+                                FontSize="18"
+                                InputScope="Default"
+                                PlaceholderForeground="#FF515050"
+                                PlaceholderText="City*"
+                                SelectionChanging="EndCity_SelectionChanging" />
+
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                <ComboBox
+                                    x:Name="EndState"
+                                    Width="105"
+                                    Margin="25,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    FontSize="18"
+                                    PlaceholderForeground="#FF515050"
+                                    PlaceholderText="State*"
+                                    SelectionChanged="EndState_SelectionChanged">
+                                    <x:String>AL</x:String>
+                                    <x:String>AK</x:String>
+                                    <x:String>AZ</x:String>
+                                    <x:String>AR</x:String>
+                                    <x:String>CA</x:String>
+                                    <x:String>CO</x:String>
+                                    <x:String>CT</x:String>
+                                    <x:String>DE</x:String>
+                                    <x:String>FL</x:String>
+                                    <x:String>GA</x:String>
+                                    <x:String>HI</x:String>
+                                    <x:String>ID</x:String>
+                                    <x:String>IL</x:String>
+                                    <x:String>IN</x:String>
+                                    <x:String>IA</x:String>
+                                    <x:String>KS</x:String>
+                                    <x:String>KY</x:String>
+                                    <x:String>LA</x:String>
+                                    <x:String>ME</x:String>
+                                    <x:String>MD</x:String>
+                                    <x:String>MA</x:String>
+                                    <x:String>MI</x:String>
+                                    <x:String>MN</x:String>
+                                    <x:String>MS</x:String>
+                                    <x:String>MO</x:String>
+                                    <x:String>MT</x:String>
+                                    <x:String>NE</x:String>
+                                    <x:String>NV</x:String>
+                                    <x:String>NH</x:String>
+                                    <x:String>NJ</x:String>
+                                    <x:String>NM</x:String>
+                                    <x:String>NY</x:String>
+                                    <x:String>NC</x:String>
+                                    <x:String>ND</x:String>
+                                    <x:String>OH</x:String>
+                                    <x:String>OK</x:String>
+                                    <x:String>OR</x:String>
+                                    <x:String>PA</x:String>
+                                    <x:String>RI</x:String>
+                                    <x:String>SC</x:String>
+                                    <x:String>SD</x:String>
+                                    <x:String>TN</x:String>
+                                    <x:String>TX</x:String>
+                                    <x:String>UT</x:String>
+                                    <x:String>VT</x:String>
+                                    <x:String>VA</x:String>
+                                    <x:String>WA</x:String>
+                                    <x:String>WV</x:String>
+                                    <x:String>WI</x:String>
+                                    <x:String>WY</x:String>
+                                </ComboBox>
+
+                                <TextBox
+                                    x:Name="EndZip"
+                                    Width="195"
+                                    Margin="10,0,25,0"
+                                    HorizontalAlignment="Left"
+                                    FontSize="18"
+                                    InputScope="Default"
+                                    PlaceholderForeground="#FF515050"
+                                    PlaceholderText="Zip Code*"
+                                    SelectionChanging="EndZip_SelectionChanging" />
+
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock
+                        x:Name="End_Status_Green"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Center"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="#FF219A09"
+                        Text="Address Status"
+                        Visibility="Collapsed" />
+                    <TextBlock
+                        x:Name="End_Status_Red"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Center"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="#FFD90120"
+                        Text="Address Status"
+                        Visibility="Collapsed" />
+                </StackPanel>
+
+                <StackPanel x:Name="Radius" HorizontalAlignment="Center">
+                    <TextBlock
+                        Margin="25,5,0,5"
+                        HorizontalAlignment="Left"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Foreground="#FF2A295C"
+                        Text="I am willing to pick up within:" />
+                    <ComboBox
+                        x:Name="StartRadius"
+                        Width="310"
+                        Margin="25,0,25,5"
+                        HorizontalAlignment="Left"
+                        FontSize="18"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="Miles From My Start Location:">
+                        <x:String>2</x:String>
+                        <x:String>4</x:String>
+                        <x:String>6</x:String>
+                        <x:String>8</x:String>
+                        <x:String>10</x:String>
+                    </ComboBox>
+
+                    <TextBlock
+                        Margin="25,5,0,5"
+                        HorizontalAlignment="Left"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Foreground="#FF2A295C"
+                        Text="I am willing to drop off up within:" />
+                    <ComboBox
+                        x:Name="EndRadius"
+                        Width="310"
+                        Margin="25,0,25,5"
+                        HorizontalAlignment="Left"
+                        FontSize="18"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="Miles From My End Location:"
+                        SelectionChanged="EndLocation_SelectionChanged">
+                        <x:String>2</x:String>
+                        <x:String>4</x:String>
+                        <x:String>6</x:String>
+                        <x:String>8</x:String>
+                        <x:String>10</x:String>
+                    </ComboBox>
+
+
+
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock
+                        x:Name="Creation_Status_Green"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Center"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="#FF219A09"
+                        Text="Creation Status"
+                        Visibility="Collapsed" />
+                    <TextBlock
+                        x:Name="Creation_Status_Red"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Center"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Foreground="#FFD90120"
+                        Text="Creation Status"
+                        Visibility="Collapsed" />                 
+                    
+                    <Button
+                        x:Name="Check_Addresses_Btn"
+                        Width="310"
+                        Height="45"
+                        Margin="0,15,0,0"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Background="#FF206EB0"
+                        BorderBrush="#2a295c"
+                        BorderThickness="1"
+                        Click="Check_Addresses_Btn_Click"
+                        Content="Create Carpool"
+                        FocusVisualPrimaryBrush="#FF2A295C"
+                        FontFamily="Arial Black"
+                        FontSize="22"
+                        FontWeight="Bold"
+                        Foreground="White" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

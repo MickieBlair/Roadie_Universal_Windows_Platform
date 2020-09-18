@@ -1,0 +1,223 @@
+﻿<Page
+    x:Class="Roadie_UWP_MLB.Views.AllRideGroups"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Roadie_UWP_MLB.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="#C1CAD6"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel
+                MinHeight="600"
+                Margin="0,35,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Orientation="Vertical">
+                <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                    <Button x:Name="Menu" Background="#FF2A295B">
+                        <Image
+                            Width="45"
+                            Height="50"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Stretch"
+                            Source="../Assets/menu.png" />
+                        <Button.Flyout>
+                            <Flyout Placement="BottomEdgeAlignedLeft">
+                                <StackPanel x:Name="Expanded" Orientation="Vertical">
+                                    <Button
+                                        x:Name="Home_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="Home_Btn_Click"
+                                        Content="Home"
+                                        FontFamily="Arial Black"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="UpdateProfile_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="UpdateProfile_Btn_Click"
+                                        Content="Update Profile"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontFamily="Arial Black"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="Vehicles_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="Vehicles_Btn_Click"
+                                        Content="Vehicles/Insurance"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="SearchForCarpool_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF699CC7"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="SearchForCarpool_Btn_Click"
+                                        Content="Browse Carpools"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                    <Button
+                                        x:Name="CreateCarpool_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="CreateCarpool_Btn_Click"
+                                        Content="Create Carpool"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+
+                                    <Button
+                                        x:Name="Logout_Btn"
+                                        Width="345"
+                                        Height="55"
+                                        Background="#FF206EB0"
+                                        BorderBrush="#2a295c"
+                                        BorderThickness="1"
+                                        Click="Logout_Btn_Click"
+                                        Content="Logout"
+                                        FocusVisualPrimaryBrush="#FF2A295C"
+                                        FontSize="22"
+                                        Foreground="White" />
+                                </StackPanel>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
+                    <Image
+                        Width="325"
+                        Height="60"
+                        Source="../Assets/Roadie_Blue.png" />
+                </StackPanel>
+                <StackPanel x:Name="PageContent" HorizontalAlignment="Center">
+                    <TextBlock
+                        Margin="0,20,0,5"
+                        HorizontalAlignment="Center"
+                        FontSize="26"
+                        FontWeight="Bold"
+                        Foreground="#FF2A295C"
+                        Text="Browse All Carpools!" />
+
+                    <ListBox
+                        x:Name="lb"
+                        Width="350"
+                        Height="200"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Left"
+                        SelectionChanged="Lb_Selected">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        HorizontalAlignment="Left"
+                                        FontSize="18"
+                                        Text="To:" />
+                                    <TextBlock
+                                        Width="250"
+                                        MinHeight="45"
+                                        Margin="10,0,0,0"
+                                        HorizontalAlignment="Left"
+                                        FontSize="18"
+                                        FontStyle="Italic"
+                                        Text="{Binding RideGroupName}"
+                                        TextWrapping="Wrap" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock
+                        Margin="0,20,0,5"
+                        HorizontalAlignment="Center"
+                        FontSize="26"
+                        FontWeight="Bold"
+                        Foreground="#FF2A295C"
+                        Text="Map of Carpool" />
+                </StackPanel>
+
+                <Maps:MapControl
+                    x:Name="MapControl1"
+                    Width="350"
+                    Height="200"
+                    Margin="0,0,0,0"
+                    MapServiceToken="wOk8DjqnMrTTwJksPC2s~u5dmDGTcJiOlshdO6Hdwkw~An3oLvBukiqCxX6LI9uKA1sAIPalBz9MvyR9Bt5BSx5Dl9xjLl6DlodS0H9yK92P"
+                    ZoomLevel="10" />
+                <StackPanel
+                    Margin="0,5,0,0"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <Image
+                            Width="116"
+                            Height="41"
+                            Margin="0,0,0,0"
+                            Source="../Assets/here.png" />
+                        <TextBlock
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Foreground="#FF2A295C"
+                            Text="Current Location" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Image
+                            Width="116"
+                            Height="41"
+                            Margin="0,0,0,0"
+                            Source="../Assets/start.png" />
+                        <TextBlock
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Foreground="#FF2A295C"
+                            Text="Start Location" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <Image
+                            Width="116"
+                            Height="41"
+                            Margin="0,0,0,0"
+                            Source="../Assets/end.png" />
+                        <TextBlock
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Foreground="#FF2A295C"
+                            Text="End Location" />
+                    </StackPanel>
+
+
+
+
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

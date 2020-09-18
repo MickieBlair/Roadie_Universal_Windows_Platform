@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "dgSpecHash": "6VZ0t3JrLnhWWXfYYvqhFJeU/PQaf26eH6qv2xF9SD4j4185y8ccwLXDis4bjd6kx/78Wi2A88uJcXcVNytoLg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\blair\\Desktop\\Roadie_UWP_MLB\\Roadie_UWP_MLB\\Roadie_UWP_MLB.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.native.compiler\\2.2.7-rel-27913-00\\microsoft.net.native.compiler.2.2.7-rel-27913-00.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.uwpcoreruntimesdk\\2.2.9\\microsoft.net.uwpcoreruntimesdk.2.2.9.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.netcore.universalwindowsplatform\\6.2.9\\microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\blair\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform\\6.2.9\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.net.native.compiler\\2.2.7-rel-27913-00\\runtime.win10-arm.microsoft.net.native.compiler.2.2.7-rel-27913-00.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.net.native.sharedlibrary\\2.2.7-rel-27913-00\\runtime.win10-arm.microsoft.net.native.sharedlibrary.2.2.7-rel-27913-00.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.net.uwpcoreruntimesdk\\2.2.9\\runtime.win10-arm.microsoft.net.uwpcoreruntimesdk.2.2.9.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.netcore.universalwindowsplatform\\6.2.9\\runtime.win10-arm.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm64-aot.microsoft.netcore.universalwindowsplatform\\6.2.9\\runtime.win10-arm64-aot.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm64.microsoft.net.native.compiler\\2.2.7-rel-27913-00\\runtime.win10-arm64.microsoft.net.native.compiler.2.2.7-rel-27913-00.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm64.microsoft.net.native.sharedlibrary\\2.2.7-rel-27913-00\\runtime.win10-arm64.microsoft.net.native.sharedlibrary.2.2.7-rel-27913-00.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x64-aot.microsoft.netcore.universalwindowsplatform\\6.2.9\\runtime.win10-x64-aot.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x64.microsoft.net.native.compiler\\2.2.7-rel-27913-00\\runtime.win10-x64.microsoft.net.native.compiler.2.2.7-rel-27913-00.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x64.microsoft.net.native.sharedlibrary\\2.2.7-rel-27913-00\\runtime.win10-x64.microsoft.net.native.sharedlibrary.2.2.7-rel-27913-00.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x64.microsoft.net.uwpcoreruntimesdk\\2.2.9\\runtime.win10-x64.microsoft.net.uwpcoreruntimesdk.2.2.9.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x64.microsoft.netcore.universalwindowsplatform\\6.2.9\\runtime.win10-x64.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86-aot.microsoft.netcore.universalwindowsplatform\\6.2.9\\runtime.win10-x86-aot.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.net.native.compiler\\2.2.7-rel-27913-00\\runtime.win10-x86.microsoft.net.native.compiler.2.2.7-rel-27913-00.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.net.native.sharedlibrary\\2.2.7-rel-27913-00\\runtime.win10-x86.microsoft.net.native.sharedlibrary.2.2.7-rel-27913-00.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\\2.2.9\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk.2.2.9.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\\6.2.9\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform.6.2.9.nupkg.sha512",
+    "C:\\Users\\blair\\.nuget\\packages\\system.net.http.formatting.extension\\5.2.3\\system.net.http.formatting.extension.5.2.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Net.Http.Formatting.Extension 5.2.3' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework 'UAP,Version=v10.0.17763'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Net.Http.Formatting.Extension",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+﻿<Page
+    x:Class="Roadie_UWP_MLB.Views.Personal_Information"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Roadie_UWP_MLB.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:extensions ="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+    Background="#C1CAD6"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer>
+            
+            <StackPanel
+                x:Name="Personal_Info"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="#C1CAD6"
+                Orientation="Vertical">
+
+                <Image
+                    Width="325"
+                    Height="157"
+                    Source="../Assets/Roadie_Logo_Blue.png" />
+
+
+                <Image
+                    Width="140"
+                    Height="140"
+                    Source="../Assets/purple.png" />
+
+                <TextBlock
+                    Padding="0,0,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FocusVisualPrimaryBrush="#FF2A295C"
+                    FontFamily="Arial"
+                    FontSize="30"
+                    FontWeight="Bold"
+                    Foreground="#FF2A295C"
+                    Text="Personal Information" />
+
+
+                <StackPanel
+                    Width="325"
+                    Margin="0,0,0,0"
+                    Orientation="Vertical">
+
+                    <TextBox 
+                        
+                        x:Name="CellPhone"
+                        Width="275"
+                        Margin="25,0,25,10"
+                        HorizontalAlignment="Left"
+                        FontSize="20"
+                        InputScope="Default"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="Cell Phone"
+                        
+                        TextChanging="CellPhone_TextChanging" />
+                    <TextBox
+                        x:Name="StreetAddress1"
+                        Width="275"
+                        Margin="25,0,25,10"
+                        HorizontalAlignment="Left"
+                        FontSize="20"
+                        InputScope="Default"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="Street Address 1"
+                        TextChanging="StreetAddress1_TextChanging" />
+
+                    <TextBox
+                        x:Name="StreetAddress2"
+                        Width="275"
+                        Margin="25,0,25,10"
+                        HorizontalAlignment="Left"
+                        FontSize="20"
+                        InputScope="Default"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="Street Address 2"
+                        TextChanging="StreetAddress2_TextChanging" />
+                    <TextBox
+                        x:Name="City"
+                        Width="275"
+                        Margin="25,0,25,10"
+                        HorizontalAlignment="Left"
+                        FontSize="20"
+                        InputScope="Default"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="City"
+                        TextChanging="City_TextChanging" />
+                    <ComboBox
+                        x:Name="State"
+                        Width="275"
+                        Margin="25,0,25,10"
+                        HorizontalAlignment="Left"
+                        FontSize="20"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="State"
+                        SelectionChanged="State_SelectionChanged">
+                        <x:String>AL</x:String>
+                        <x:String>AK</x:String>
+                        <x:String>AZ</x:String>
+                        <x:String>AR</x:String>
+                        <x:String>CA</x:String>
+                        <x:String>CO</x:String>
+                        <x:String>CT</x:String>
+                        <x:String>DE</x:String>
+                        <x:String>FL</x:String>
+                        <x:String>GA</x:String>
+                        <x:String>HI</x:String>
+                        <x:String>ID</x:String>
+                        <x:String>IL</x:String>
+                        <x:String>IN</x:String>
+                        <x:String>IA</x:String>
+                        <x:String>KS</x:String>
+                        <x:String>KY</x:String>
+                        <x:String>LA</x:String>
+                        <x:String>ME</x:String>
+                        <x:String>MD</x:String>
+                        <x:String>MA</x:String>
+                        <x:String>MI</x:String>
+                        <x:String>MN</x:String>
+                        <x:String>MS</x:String>
+                        <x:String>MO</x:String>
+                        <x:String>MT</x:String>
+                        <x:String>NE</x:String>
+                        <x:String>NV</x:String>
+                        <x:String>NH</x:String>
+                        <x:String>NJ</x:String>
+                        <x:String>NM</x:String>
+                        <x:String>NY</x:String>
+                        <x:String>NC</x:String>
+                        <x:String>ND</x:String>
+                        <x:String>OH</x:String>
+                        <x:String>OK</x:String>
+                        <x:String>OR</x:String>
+                        <x:String>PA</x:String>
+                        <x:String>RI</x:String>
+                        <x:String>SC</x:String>
+                        <x:String>SD</x:String>
+                        <x:String>TN</x:String>
+                        <x:String>TX</x:String>
+                        <x:String>UT</x:String>
+                        <x:String>VT</x:String>
+                        <x:String>VA</x:String>
+                        <x:String>WA</x:String>
+                        <x:String>WV</x:String>
+                        <x:String>WI</x:String>
+                        <x:String>WY</x:String>
+                    </ComboBox>
+
+                    <TextBox
+                        x:Name="Zip"
+                        Width="275"
+                        Margin="25,0,25,10"
+                        HorizontalAlignment="Left"
+                        FontSize="20"
+                        InputScope="Default"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="Zip Code"
+                        TextChanging="Zip_TextChanging" />
+
+                    <TextBlock
+                        Padding="0,20,0,10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FocusVisualPrimaryBrush="#FF2A295C"
+                        FontFamily="Arial"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Foreground="#FF2A295C"
+                        Text="License Information" />
+
+                    <TextBox
+                        x:Name="DriversLicenseNumber"
+                        Width="275"
+                        Margin="25,0,25,10"
+                        HorizontalAlignment="Left"
+                        FontSize="20"
+                        InputScope="Default"
+                        PlaceholderForeground="#FF515050"
+                        PlaceholderText="License Number"
+                        TextChanging="DriversLicenseNumber_TextChanging" />
+
+                    <CalendarDatePicker
+                        x:Name="IssueDate"
+                        Width="275"
+                        Height="40"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Center"
+                        FocusEngaged="IssueDate_FocusEngaged"
+                        FontSize="20"
+                        Foreground="#FF515050"
+                        PlaceholderText="Issue Date" />
+
+                    <CalendarDatePicker
+                        x:Name="ExpDate"
+                        Width="275"
+                        Height="40"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Center"
+                        FocusEngaged="ExpDate_FocusEngaged"
+                        FontSize="20"
+                        Foreground="#FF515050"
+                        PlaceholderText="Expiration Date" />
+
+                    <TextBlock
+                        x:Name="Status"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Center"
+                        FontFamily="Arial Rounded MT Bold"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Foreground="#FFD90120"
+                        Text="" />
+
+                </StackPanel>
+
+                <StackPanel
+                    Height="75"
+                    Margin="0,0,0,0"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+
+
+                    <!--<Button
+                        x:Name="Btn_Back"
+                        Width="55"
+                        Height="55"
+                        HorizontalAlignment="Left"
+                        Background="White"
+                        BorderBrush="#2a295c"
+                        BorderThickness="1"
+                        Click="Btn_Back_Click">
+
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Assets/arrow.png" Stretch="Fill" />
+                        </StackPanel>
+                    </Button>-->
+
+                    <Button
+                        x:Name="Login_Btn"
+                        Width="275"
+                        Height="55"
+                        Margin="10"
+                        Background="#FF206EB0"
+                        BorderBrush="#2a295c"
+                        BorderThickness="1"
+                        Click="Login_Btn_Click"
+                        FocusVisualPrimaryBrush="#FF2A295C"
+                        FontFamily="Arial Black"
+                        FontSize="22"
+                        FontWeight="Bold"
+                        Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                Padding="0,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FocusVisualPrimaryBrush="#FF2A295C"
+                                FontFamily="Arial"
+                                FontSize="22"
+                                FontWeight="Bold"
+                                Foreground="White"
+                                Text="Login" />
+                            <Image
+                                Width="45"
+                                Height="50"
+                                HorizontalAlignment="Stretch"
+                                Source="../Assets/right_arrow.png" />
+
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <TextBlock x:Name="Info" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SplashScreenSource>C:\Users\blair\source\repos\splash.png</SplashScreenSource>
+    <SmallTileSource>C:\Users\blair\source\repos\Roadie_UWP_MLB\Roadie_UWP_MLB\Assets\asset1.png</SmallTileSource>
+    <MediumTileSource>C:\Users\blair\source\repos\Roadie_UWP_MLB\Roadie_UWP_MLB\Assets\asset1.png</MediumTileSource>
+    <WideTileSource>C:\Users\blair\source\repos\Roadie_UWP_MLB\Roadie_UWP_MLB\Assets\asset1.png</WideTileSource>
+    <LargeTileSource>C:\Users\blair\source\repos\Roadie_UWP_MLB\Roadie_UWP_MLB\Assets\asset1.png</LargeTileSource>
+    <AppIconSource>C:\Users\blair\source\repos\Roadie_UWP_MLB\Roadie_UWP_MLB\Assets\asset1.png</AppIconSource>
+    <PackageLogoSource>C:\Users\blair\source\repos\Roadie_UWP_MLB\Roadie_UWP_MLB\Assets\asset1.png</PackageLogoSource>
+    <Source>C:\Users\blair\source\repos\Roadie_UWP_MLB\Roadie_UWP_MLB\Assets\asset1.png</Source>
+    <BadgeLogoSource>C:\Users\blair\source\repos\Roadie_UWP_MLB\Roadie_UWP_MLB\Assets\asset1.png</BadgeLogoSource>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DeviceId>30f105c9-681e-420b-a277-7c086ead8a4e</DeviceId>
+    <UseEmulator>false</UseEmulator>
+  </PropertyGroup>
+</Project>
